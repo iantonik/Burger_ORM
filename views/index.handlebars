@@ -1,0 +1,70 @@
+    <div class="jumbotron jumbotron-fluid jumbotron-burger">
+        <div class="container">
+            <h1 class="display-4">Eat-Da-Burger</h1>
+            {{!-- <p class="lead"></p> --}}
+        </div>
+    </div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="title">
+                <h2>Ready to be devoured!</h2>
+            </div>
+            <div class="ready-burgers">
+                <ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgers/burger-block devoured=false}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            <div class="title">
+                <h2>Devoured!</h2>
+            </div>
+            <div class="devoured-burgers">
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/devoured-block devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row build-block">
+        <div class="col">
+            <div class="title">
+            <h2>Build Your Own Burger!</h2>
+        </div>
+
+        <div align="center">
+            <form class="create-burger">
+                <div class="form-group">
+                    <input class="burger-input" type="text" id="burger-name" ></input>
+                    <small class="form-text text-muted">Enter the type of a burger you would like to eat. Click Submit to add it to a menu.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        </div>
+        
+    </div>
+</div>
+
+{{!-- <div class="burger-image">
+    <img src="./assets/img/single-burger.jpg"></img>
+</div> --}}
